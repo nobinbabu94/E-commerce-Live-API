@@ -1,9 +1,24 @@
 import React, { createElement } from "react";
 import ReactDOM, { createRoot } from 'react-dom/client'
 
+
+
+const NewComponent = (props) =>{
+    console.log(props)
+   return(
+    
+    <>
+    <h1>{props.hello}</h1>
+    </>
+   )
+}
+
 const Apps = () =>(
 
-    <h1>Hello Nobin </h1>
+   <React.Fragment>
+    <NewComponent hello={"hello"} />
+    
+   </React.Fragment>
 ) 
 
 
