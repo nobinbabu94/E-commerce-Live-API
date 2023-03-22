@@ -1,0 +1,57 @@
+.logo {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  background-color: rgb(0, 59, 59);
+  border-radius: 10;
+  box-shadow: 0px 5px 90px rgb(0, 0, 0);
+  padding: 10;
+}
+.menus {
+  display: flex;
+  list-style-type: none;
+  color: rgb(255, 255, 255);
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar > input {    
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  background-color: #003b2600;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    width: 200px;
+}
+
+.menus > li {
+  padding: 5px;
+}
+.menus > li:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.card{
+  width:300px;
+
+  border: 2px solid black;
+  margin: 10;
+
+
+}
+
+.cardList{
+  display: flex;
+  flex-wrap: wrap;
+}
