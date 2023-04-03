@@ -11,7 +11,7 @@
   margin: 10px;
   background-color: rgb(0, 59, 59);
   border-radius: 10;
-  box-shadow: 0px 5px 90px rgb(0, 0, 0);
+  box-shadow: 0px 5px 40px rgb(0, 0, 0);
   padding: 10;
 }
 .menus {
@@ -25,13 +25,14 @@
   align-items: center;
 }
 
-.searchBar > input {    
-  border: 2px solid rgb(255, 255, 255);
+.searchBar > input {
+  border: 2px solid rgb(0, 86, 108);
   border-radius: 4px;
-  background-color: #003b2600;
-    color: rgb(255, 255, 255);
-    height: 30px;
-    width: 200px;
+  background-color: #58a10000;
+  color: rgb(0, 101, 99);
+  height: 30px;
+  width: 200px;
+  margin-right: 3;
 }
 
 .menus > li {
@@ -42,16 +43,31 @@
   cursor: pointer;
 }
 
-.card{
-  width:300px;
-
-  border: 2px solid black;
+.card {
+  width: 250px;
+  height: 350px;
+  border: 2px solid rgb(235, 178, 178);
   margin: 10;
-
-
+  border-radius: 10;
+  box-shadow: 5px 1px 10px;
+  padding: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 5;
+  margin-top: 40;
+}
+.card > img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
-.cardList{
+.cardList {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  padding: 5;
+  margin-top: 40;
+  
 }

@@ -1,27 +1,23 @@
-import { CardImage_CDN, RestaurantList } from "../constants"
+import { CardImage_CDN } from "../constants";
 
-const RestaurantCard = () => {
-    console.log(RestaurantList[0].data)
 
-    
+const RestaurantCard = ({ name, cloudinaryImageId
+    , id, cuisineslastMileTravel, lastMileTravelString, cuisines }) => {
+
     return (
-        <div className="cardList">
-            {/* <img src={imges+RestaurantList[0].data.cloudinaryImageId} /> */}
-            {
-                RestaurantList.map((restaurant) => {
-                    const { name, cloudinaryImageId
-                        , id, cuisineslastMileTravel } = restaurant.data;
-                    return (
-                        <div key={id} className='card'>
-                            <img width={'100%'} src={CardImage_CDN + cloudinaryImageId} />
-                            <h2>{name}</h2>
-                            <h4>{cuisineslastMileTravel}</h4>
-                        </div>
-                    )
-                })
-            }
-        </div>
+
+        <>
+
+            <div className='card'>
+                <img  src={CardImage_CDN + cloudinaryImageId} />
+                <h2>{name}</h2>
+                <h4>{cuisines}</h4>
+                <h4>{lastMileTravelString}</h4>
+
+
+            </div>
+        </>
     )
 }
 
-export default RestaurantCard
+export default RestaurantCard;

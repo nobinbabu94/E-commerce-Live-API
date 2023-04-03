@@ -5,48 +5,32 @@ import Title from "./components/Title";
 import MenuItems from "./components/MenuItems";
 import { useState, useEffect } from 'react'
 import RestaurantCard from "./components/RestaurantCard";
+import SearchBar from "./components/SearchBar";
+import WorkingFile from "./components/WorkingFile";
+import Body from "./components/Body";
 
-const RestaurantList = [
-
-]
-
-
-
-const SearchBar = () => {
-    return (
-        <div className="searchBar">
-            <input  ></input>
-        </div>
-    )
-}
-
+const RestaurantList = []
 
 const Header = () => {
-
     const [abc, setAbc] = useState('ture')
-
     return (
         <>
             <div className="header">
                 <Title />
-                <SearchBar />
                 <MenuItems />
-
-
-
             </div>
-           
+
         </>
     )
 }
-
 
 
 const Apps = () => (
 
     <React.Fragment>
         <Header />
-        <RestaurantCard />
+        <WorkingFile />
+        <Body />
     </React.Fragment>
 )
 
