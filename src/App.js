@@ -1,40 +1,51 @@
 import React, { createElement } from "react";
 import ReactDOM, { createRoot } from 'react-dom/client'
-import '../index.css'
-import Title from "./components/Title";
-import MenuItems from "./components/MenuItems";
-import { useState, useEffect } from 'react'
-import RestaurantCard from "./components/RestaurantCard";
-import SearchBar from "./components/SearchBar";
-import WorkingFile from "./components/WorkingFile";
 import Body from "./components/Body";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import '../index.css'
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
 
-const RestaurantList = []
-
-const Header = () => {
-    const [abc, setAbc] = useState('ture')
-    return (
-        <>
-            <div className="header">
-                <Title />
-                <MenuItems />
-            </div>
-
-        </>
-    )
-}
-
-
-const Apps = () => (
-
+const AppLayout = () => {
+return(
     <React.Fragment>
         <Header />
-        <WorkingFile />
-        <Body />
+       <Outlet/>
+        <Footer />
     </React.Fragment>
-)
+)}
+
+const rootLayout = createBrowserRouter([
+    {
+        path: '/',
+        element:<AppLayout/>,
+        errorElement:<Error/>,
+        children:[
+            
+            {
+                path:'/',
+                element:<Body/>
+            },
+            
+            {
+                path:'/about',
+                element:<About/>
+            },
+            {
+                path:'/contactus',
+                element:<Contact/>
+            },
+        ]
+
+    },
+ 
+    
+]);
 
 
-const root = createRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<Apps />)
+root.render(<RouterProvider router={rootLayout}/>)

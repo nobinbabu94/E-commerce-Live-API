@@ -6,13 +6,13 @@ import ShimmerUi from "./ShimmerUi";
 
 const filterAll = (data, restaurantData) => {
     const filterlist = restaurantData.filter((item) => {
-        console.log(item,'item')
+        console.log(item, 'item')
 
         return item?.data?.name?.toLowerCase()?.includes(data?.toLowerCase())
-    
+
 
     })
-    console.log(filterlist,'filterlist')
+    console.log(filterlist, 'filterlist')
     return filterlist;
 }
 
@@ -63,17 +63,18 @@ const Body = () => {
                 <button onClick={() => {
                     const fillData = filterAll(data, restaurantData);
                     setFilteredRestaurantData(fillData)
-                    console.log(fillData,'data')
+                    console.log(fillData, 'data')
                 }}>Search  </button>
             </div>
             <div className="cardList">
-            {restaurantData.length === 0 ? <ShimmerUi /> :(
-                filteredRestaurantData.length === 0 ? <h1>Not found product</h1> :
-                filteredRestaurantData.map((restaurant) => {
-                    return <RestaurantCard key={restaurant?.data?.id} {...restaurant?.data} />
+                {restaurantData?.length === 0 ? <ShimmerUi /> : (
 
-                })
-            )}
+                    filteredRestaurantData.length === 0 ? <h1>Not found product</h1> :
+                        filteredRestaurantData.map((restaurant) => {
+                            return <RestaurantCard key={restaurant?.data?.id} {...restaurant?.data} />
+
+                        })
+                )}
             </div>
         </>
     )
