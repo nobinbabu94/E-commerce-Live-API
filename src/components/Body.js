@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { CardImage_CDN, RestaurantList } from "../constants"
 import RestaurantCard from "./RestaurantCard";
-import SearchBar from "./SearchBar";
+import SearchBar from "./RestaurantMenu";
 import ShimmerUi from "./ShimmerUi";
 
 const filterAll = (data, restaurantData) => {
@@ -37,7 +37,7 @@ const Body = () => {
         const data = await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0158605&lng=76.3418666&page_type=DESKTOP_WEB_LISTING"
         );
-        json = await data.json();
+        const json = await data.json();
         setRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
         setFilteredRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
         console.log(json.data.cards[2]?.data?.data?.cards)

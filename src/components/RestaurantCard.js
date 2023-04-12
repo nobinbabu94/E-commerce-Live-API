@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CardImage_CDN } from "../constants";
 
 
@@ -7,7 +8,7 @@ const RestaurantCard = ({ name, cloudinaryImageId
     return (
 
         <>
-
+        <Link style={{textDecoration:'none'}} to={'/restaurantmenu/'+id}>
             <div className='card'>
                 <img  src={CardImage_CDN + cloudinaryImageId} />
                 <h2>{name}</h2>
@@ -16,6 +17,8 @@ const RestaurantCard = ({ name, cloudinaryImageId
 
 
             </div>
+            </Link>
+
         </>
     )
 }

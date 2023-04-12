@@ -8,44 +8,51 @@ import '../index.css'
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-
+import { RestaurantMenu } from "./components/RestaurantMenu";
 const AppLayout = () => {
-return(
-    <React.Fragment>
-        <Header />
-       <Outlet/>
-        <Footer />
-    </React.Fragment>
-)}
+    return (
+        <React.Fragment>
+            <Header />
+            <Outlet />
+            <Footer />
+        </React.Fragment>
+    )
+}
 
 const rootLayout = createBrowserRouter([
     {
         path: '/',
-        element:<AppLayout/>,
-        errorElement:<Error/>,
-        children:[
-            
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+
             {
-                path:'/',
-                element:<Body/>
+                path: '/',
+                element: <Body />
             },
-            
+
             {
-                path:'/about',
-                element:<About/>
+                path: '/about',
+                element: <About />
             },
             {
-                path:'/contactus',
-                element:<Contact/>
+                path: '/contactus',
+                element: <Contact />
             },
+            {
+                path: '/restaurantmenu/:id',
+                element: <RestaurantMenu />
+
+            },
+         
         ]
 
     },
- 
-    
+
+
 ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<RouterProvider router={rootLayout}/>)
+root.render(<RouterProvider router={rootLayout} />)
