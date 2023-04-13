@@ -1,33 +1,32 @@
-import React from 'react'
+import React, { Profiler } from 'react'
+import Profile from './Profile';
 
 class About extends React.Component {
     constructor() {
         super();
         this.state = {
-            count: 1
+            count: 0
         }
 
-        console.log('about')
+        console.log('Parent inside constructor')
 
+    }
+
+   componentDidMount() {
+        
+        console.log('Parent component mount')
 
     }
 
 
-
     render() {
-
-
+        console.log('Parent inside render')
         return (
             <>
+                <h1>{}</h1>
+                <button onClick={() => this.setState({ count: 1 })}>Add</button>
                 <h1>{this.state.count}</h1>
-                <button onClick={() => {
-                    this.setState({ count: this.state.count+1 })
-                }
-                }>
-                    +
-                </button>
-
-
+                {/* <Profile xyz={'hello'} /> */}
             </>
         )
     }
