@@ -1,4 +1,5 @@
 import React from 'react'
+import ShimmerUi from './ShimmerUi'
 
 class Profile extends React.Component {
 
@@ -6,6 +7,7 @@ class Profile extends React.Component {
         super()
         this.state = {
             gitApi: '',
+            isLoading:true
            
         }
         console.log('child constructor')
@@ -17,6 +19,7 @@ class Profile extends React.Component {
         console.log('child', json)
 
         this.setState({ gitApi: json })
+        this.setState({ isLoading: false })
         console.log('child - component mount')
 
     }
@@ -27,11 +30,14 @@ class Profile extends React.Component {
         const { count } = this.state
         return (
             <>
-               
+
+               {this.state.isLoading === true ? <ShimmerUi/> :  
+               <>
                 <h1>{name}</h1>
                 <img src={avatar_url} />
                 <h5>username:{login}</h5>
-
+                </>
+}
             </>
         )
     }
