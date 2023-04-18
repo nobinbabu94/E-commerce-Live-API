@@ -5,28 +5,39 @@ class About extends React.Component {
     constructor() {
         super();
         this.state = {
-            count: 0
+            count: ''
         }
 
         console.log('Parent inside constructor')
 
+       
+    }
+    componentDidMount(){
+        console.log('parent component mount')
     }
 
-   componentDidMount() {
-        
-        console.log('Parent component mount')
+    // async componentDidMount() {
+    //     const data = await fetch('https://api.github.com/users/nobinbabu94')
+    //     const json = await data.json();
+    //     console.log('parent', json)
 
+    //     this.setState({ count: json })
+    //     console.log('Parent - component mount')
+
+    // }
+
+    componentWillUnmount(){
+        console.log('unmount')
     }
-
 
     render() {
         console.log('Parent inside render')
         return (
             <>
-                <h1>{}</h1>
-                <button onClick={() => this.setState({ count: 1 })}>Add</button>
-                <h1>{this.state.count}</h1>
-                {/* <Profile xyz={'hello'} /> */}
+                {/* <h1>{}</h1>
+                <h1>{this.state.count.name}</h1>
+                <img src={this.state.count.avatar_url}/> */}
+                <Profile xyz={'hello'} />
             </>
         )
     }
