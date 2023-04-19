@@ -31,6 +31,8 @@ const Body = () => {
 
     useEffect(() => {
         getApi()
+
+      
     }, [])
 
     async function getApi() {

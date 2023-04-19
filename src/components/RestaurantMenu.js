@@ -8,7 +8,7 @@ export const RestaurantMenu = () => {
   const { id } = useParams();
   const [restaurantData, setRestaurantdata] = useState({})
   const [isLoading, setIsLoading] = useState(true);
-
+  let Menu = []
   console.log(id)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const RestaurantMenu = () => {
   //   setRestaurantdata(json.data.cards)
   //   console.log(json.data)
   // }
- 
+
 
   const getRestaurantInfo = async () => {
     let response, jsonResponse;
@@ -36,14 +36,25 @@ export const RestaurantMenu = () => {
     }
 
   };
+  console.log(restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR)
 
 
 
   const imageId = restaurantData[0]?.card?.card?.info?.cloudinaryImageId
   const imageUrl = imageId && CardImage_CDN + imageId
-  const menuItems = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards
+  const menuItemMain = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards
+  const menuItemSub = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[3].card.card.itemCards
 
-  return (
+
+  if(menuItemMain ){
+    Menu = menuItemMain
+  }
+  else {
+    Menu = menuItemSub
+  } 
+
+  console.log(Menu,'menu')
+  return (   
 
 
     <div className="restaurantMenu">
@@ -56,17 +67,17 @@ export const RestaurantMenu = () => {
           <h3 >Menu Items</h3>
           <ul>
             {
-              menuItems?.map((menuItem, index) => {
+             Menu?.map((menuItem, index) => {
                 return (
-                  <li key={index} className="menu-list">{menuItem?.card?.info?.name} - 
-                  Rs.{menuItem?.card?.info?.price
-                  }</li> 
+                  <li key={index} className="menu-list">{menuItem?.card?.info?.name} -
+                    Rs.{menuItem?.card?.info?.price
+                    }</li>
                 )
               })
             }
           </ul>
         </>
-     )} 
+      )}
 
     </div>
 
