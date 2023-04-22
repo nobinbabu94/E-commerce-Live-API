@@ -1,41 +1,45 @@
-import React, { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { CardImage_CDN } from "../constants";
+import ShimmerUi from './ShimmerUi'
+import useRestaurant from "../utils/useRestaurantMenu";
 
 export const RestaurantMenu = () => {
 
-    const { id } = useParams();
-    const [restaurantData, setRestaurantdata] = useState({})
+  const {restaurantData, isLoading} = useRestaurant()
+  console.log(restaurantData,'loading')
 
-    console.log(id)
+  const imageId = restaurantData[0]?.card?.card?.info?.cloudinaryImageId
+  const imageUrl = imageId && CardImage_CDN + imageId
+  const menuItems = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards
+  const restaurantName = restaurantData[0]?.card?.card?.info?.name
 
-    useEffect(() => {
-        getRestaurantInfo();
-      }, []);
-    
-      const getRestaurantInfo = async () => {
-        try {
-          const response = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.8969727&lng=76.41581289999999&restaurantId=${id}&submitAction=ENTER`);
-          const res_data = await response.json();
-          setRestaurantdata(res_data.data)
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      console.log(restaurantData)
- 
+  return (
 
-    // API ISSUE SO NOT FETCHED INFORMATION
-    return (
 
-        <div>
-            <h1>API ISSUE SO NOT FETCHED INFORMATION</h1>
-            {/* <h3>{restaurantData}</h3> */}
+    <div className="restaurantMenu">
+      {!isLoading ? <ShimmerUi /> : (
+        <>
 
-            <h1>{id}</h1>
-            {/* <h1>{restaurantData.cards[0].cards.card.name}</h1> */}
+          <img src={CardImage_CDN + restaurantData[0]?.card?.card?.info?.cloudinaryImageId} alt={'restaurantMenu'} className="restaurant-image" />
 
-        </div>
+          <h1 className="restaurantName">{restaurantName}</h1>
+          <h3 >Menu Items</h3>
+          <ul>
+            {
+              menuItems?.map((menuItem, index) => {
+                return (
+                  <li key={index} className="menu-list">{menuItem?.card?.info?.name} -
+                    Rs.{menuItem?.card?.info?.price
+                    }</li>
+                )
+              })
+            }
+          </ul>
+        </>
+      )}
 
-    );
+    </div>
+
+
+  );
 };
