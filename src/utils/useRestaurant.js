@@ -3,7 +3,7 @@ const useRestaurant = () =>{
     return(
 
         <>
-        
+        useRestaurant
         </>
     )
 }
