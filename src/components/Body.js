@@ -3,18 +3,7 @@ import { CardImage_CDN, RestaurantList } from "../constants"
 import RestaurantCard from "./RestaurantCard";
 import SearchBar from "./RestaurantMenu";
 import ShimmerUi from "./ShimmerUi";
-
-const filterAll = (data, restaurantData) => {
-    const filterlist = restaurantData.filter((item) => {
-        console.log(item, 'item')
-
-        return item?.data?.name?.toLowerCase()?.includes(data?.toLowerCase())
-
-
-    })
-    console.log(filterlist, 'filterlist')
-    return filterlist;
-}
+import { filterAll } from "../utils/Helper";
 
 
 const Body = () => {
