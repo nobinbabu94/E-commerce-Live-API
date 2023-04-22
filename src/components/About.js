@@ -26,7 +26,7 @@ class About extends React.Component {
                 <h1>{}</h1>
                 <button onClick={() => this.setState({ count: 1 })}>Add</button>
                 <h1>{this.state.count}</h1>
-                {/* <Profile xyz={'hello'} /> */}
+                <Profile xyz={'hello'} />
             </>
         )
     }

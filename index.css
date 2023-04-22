@@ -99,3 +99,17 @@
   align-items: center;
   
 }
+
+.restaurantMenu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+}
+.restaurantName{
+  color: red;
+}
+.menu-list{
+  color: darkcyan;
+}

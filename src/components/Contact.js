@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Profile from './Profile'
 
 const Contact = () => {
 
@@ -9,6 +10,7 @@ const Contact = () => {
         <>
             <h1>{count}</h1>
             <button onClick={()=>setCount(count+1)}>+</button>
+       
         </>
     )
 }
