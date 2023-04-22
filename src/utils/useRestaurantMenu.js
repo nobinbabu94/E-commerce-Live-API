@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -29,6 +30,16 @@ const useRestaurant = () =>{
 
 
 
+=======
+const useRestaurant = () =>{
+
+    return(
+
+        <>
+uuuudfgdfggfdfg sdfgdfgdfgdf
+        </>
+    )
+>>>>>>> f2bdb1a (updates)
 }
 
 export default useRestaurant;
