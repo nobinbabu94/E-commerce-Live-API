@@ -6,7 +6,7 @@ import useRestaurant from "../utils/useRestaurantMenu";
 export const RestaurantMenu = () => {
 
   const {restaurantData, isLoading} = useRestaurant()
-  console.log(restaurantData,'loading')
+
 
   const imageId = restaurantData[0]?.card?.card?.info?.cloudinaryImageId
   const imageUrl = imageId && CardImage_CDN + imageId
@@ -19,9 +19,7 @@ export const RestaurantMenu = () => {
     <div className="restaurantMenu">
       {!isLoading ? <ShimmerUi /> : (
         <>
-
           <img src={CardImage_CDN + restaurantData[0]?.card?.card?.info?.cloudinaryImageId} alt={'restaurantMenu'} className="restaurant-image" />
-
           <h1 className="restaurantName">{restaurantName}</h1>
           <h3 >Menu Items</h3>
           <ul>

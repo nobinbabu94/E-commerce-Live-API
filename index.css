@@ -78,8 +78,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
-  
 }
 
 .shimmerCard{
@@ -90,8 +88,6 @@
   padding: 10;
   margin-top: 40;
   border-radius: 10;
-
-
 }
 
 .Loginout{
@@ -107,9 +103,11 @@
   align-items: center;
   margin-top: 55px;
 }
+
 .restaurantName{
   color: red;
 }
+
 .menu-list{
   color: darkcyan;
 }
