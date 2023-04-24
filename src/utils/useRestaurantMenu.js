@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const useRestaurant = () =>{
-    const { id } = useParams();
-    const [restaurantData,setRestaurantData] = useState({})
-    const [isLoading, setIsLoading] = useState(false);
+const useRestaurant = () => {
+  const { id } = useParams();
+  const [restaurantData, setRestaurantData] = useState({})
+  const [isLoading, setIsLoading] = useState(false);
+ 
 
-     
-  useEffect(() => {  
+
+  useEffect(() => {
     getRestaurantInfo();
   }, []);
 
@@ -25,9 +26,7 @@ const useRestaurant = () =>{
 
   };
 
-  return {restaurantData,isLoading}
-
-
+  return { restaurantData, isLoading }
 
 }
 

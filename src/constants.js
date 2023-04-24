@@ -1,7 +1,6 @@
 export const IMG_CDN = "https://icon-library.com/images/food-app-icon/food-app-icon-12.jpg";
 export const CardImage_CDN = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
-// export const RESTAURANTMENU_CDN ='https://www.swiggy.com/restaurants/alakapuri-civil-station-road-kakkanad-kochi-'
-
+export const RESTAURANT_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0158605&lng=76.3418666&page_type=DESKTOP_WEB_LISTING"
 export const RestaurantList = [
     {
         "type": "restaurant",
