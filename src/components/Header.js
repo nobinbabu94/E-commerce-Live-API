@@ -21,7 +21,7 @@ const Header = () => {
             <div className="header">
                 <Title />
                 <MenuItems />
-                <div>{isOnline }</div>
+                <div className='onlineOffline'>{isOnline ? "Online💚 " : "Offline🧡  "}</div>
                 <div className='Loginout'>
                     {loggedin === true ? <button onClick={logIn}>Login</button> : <button onClick={logOut}>Logout</button>}
                     
