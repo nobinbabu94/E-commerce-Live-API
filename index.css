@@ -90,6 +90,13 @@
   border-radius: 10;
 }
 
+.onlineOffline{
+
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
 .Loginout{
   display: flex;
   align-items: center;
