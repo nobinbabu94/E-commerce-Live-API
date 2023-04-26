@@ -9,9 +9,9 @@ const RestaurantCard = ({ name, cloudinaryImageId
 
         <>
         <Link style={{textDecoration:'none'}} to={'/restaurantmenu/'+id}>
-            <div className='card'>
+            <div className='h-80 w-96 p-3 shadow-lg rounded-lg '>
                 <img  src={CardImage_CDN + cloudinaryImageId} />
-                <h2>{name}</h2>
+                <h2 className="font-extrabold">{name}</h2>
                 <h4>{cuisines}</h4>
                 <h4>{lastMileTravelString}</h4>
 

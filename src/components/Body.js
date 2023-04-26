@@ -39,13 +39,14 @@ const Body = () => {
 
         <>
 
-            <div className="searchBar">
+            <div className="p-2 h-12 bg-teal-700 flex justify-center items-center border-4 ">
                 <input
+                className=" appearance-none m-5 rounded-md border-2 "
                     type={'text'}
                     value={data}
                     onChange={(e) => inputData(e)}
                 />
-                <button onClick={() => {
+                <button className="text-white rounded-md border-2 w-16 " onClick={() => {
                     const fillData = filterAll(data, restaurantData);
                     setFilteredRestaurantData(fillData)
                     console.log(fillData, 'data')
@@ -53,7 +54,7 @@ const Body = () => {
             </div>
             {isOnline ?
                 (
-                    <div className="cardList">
+                    <div className="flex flex-wrap justify-center ">
                         {restaurantData?.length === 0 ? <ShimmerUi /> : (
 
                             filteredRestaurantData.length === 0 ? <h1>Not found product</h1> :

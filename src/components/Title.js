@@ -4,10 +4,10 @@ const Title = () => {
 
     
     return (
-        <div className="logo">
-            <img width={'100%'} alt="Logo" src={ IMG_CDN} />
+        <a href="/">
+            <img width={50} alt="Logo" src={ IMG_CDN} />
 
-        </div>
+        </a>
     )
 }
 
