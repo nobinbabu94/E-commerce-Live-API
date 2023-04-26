@@ -1,4 +1,9 @@
-.logo {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .logo {
   width: 50px;
   display: flex;
   justify-content: center;
@@ -117,4 +122,4 @@
 
 .menu-list{
   color: darkcyan;
-}
+} */

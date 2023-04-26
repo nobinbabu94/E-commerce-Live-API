@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import MenuItems from './MenuItems';
 import Title from './Title';
 import useOnline from '../utils/useOnline';
@@ -8,23 +8,23 @@ const Header = () => {
 
     const isOnline = useOnline()
 
-    const logIn = () =>{
+    const logIn = () => {
         setLoggedin(false)
     }
-    const logOut = () =>{
+    const logOut = () => {
         setLoggedin(true)
     }
 
 
-    return (
+    return (    
         <>
-            <div className="header">
+            <div className='flex bg-teal-800 justify-around items-center h-20 p-10 shadow-lg' >
                 <Title />
                 <MenuItems />
-                <div className='onlineOffline'>{isOnline ? "Online💚 " : "Offline🧡  "}</div>
+                {isOnline ? "" : "Offline🧡  "}
                 <div className='Loginout'>
-                    {loggedin === true ? <button onClick={logIn}>Login</button> : <button onClick={logOut}>Logout</button>}
-                    
+                    {loggedin === true ? <button className='text-white' onClick={logIn}>Login</button> : <button onClick={logOut}>Logout</button>}
+
                 </div>
             </div>
 
