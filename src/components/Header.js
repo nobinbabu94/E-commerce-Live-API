@@ -18,12 +18,12 @@ const Header = () => {
 
     return (    
         <>
-            <div className='flex bg-teal-800 justify-around items-center h-20 p-10 shadow-lg' >
+            <div className='md:flex sm:justify-center bg-teal-800 md:justify-around items-center p-2 ' >
                 <Title />
                 <MenuItems />
-                {isOnline ? "" : "Offline🧡  "}
-                <div className='Loginout'>
-                    {loggedin === true ? <button className='text-white' onClick={logIn}>Login</button> : <button onClick={logOut}>Logout</button>}
+                {isOnline ? "" : <h5 className='text-white'>Offline🧡 </h5>}
+                <div className='text-white flex justify-around m-5'>
+                    {loggedin === true ? <button onClick={logIn}>Login</button> : <button onClick={logOut}>Logout</button>}
 
                 </div>
             </div>
