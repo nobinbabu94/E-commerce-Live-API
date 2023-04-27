@@ -39,9 +39,9 @@ const Body = () => {
 
         <>
 
-            <div className="p-2 h-12 bg-teal-700 flex justify-center items-center border-4 ">
+            <div className="p-2 h-12 bg-teal-700 flex justify-center items-center border-4 gap-2  ">
                 <input
-                className=" appearance-none m-5 rounded-md border-2 "
+                className=" appearance-none rounded-md border-2 "
                     type={'text'}
                     value={data}
                     onChange={(e) => inputData(e)}
