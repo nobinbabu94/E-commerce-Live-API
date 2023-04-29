@@ -28,9 +28,19 @@ const Body = () => {
         const data = await fetch(RESTAURANT_LIST);
         const json = await data.json();
         setRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
+
         setFilteredRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
         console.log(json.data.cards[2]?.data?.data?.cards)
     }
+    useEffect(() => {
+        const handleContextmenu = e => {
+            e.preventDefault()
+        }
+        document.addEventListener('contextmenu', handleContextmenu)
+        return function cleanup() {
+            document.removeEventListener('contextmenu', handleContextmenu)
+        }
+    }, [])
 
     if (!filteredRestaurantData) return null;
 
@@ -41,7 +51,7 @@ const Body = () => {
 
             <div className="p-2 h-12 bg-teal-700 flex justify-center items-center border-4 gap-2  ">
                 <input
-                className=" appearance-none rounded-md border-2 "
+                    className=" appearance-none rounded-md border-2 "
                     type={'text'}
                     value={data}
                     onChange={(e) => inputData(e)}
