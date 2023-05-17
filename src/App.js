@@ -1,4 +1,4 @@
-import React, { lazy,Suspense } from "react";
+import React, { lazy, Suspense, useContext } from "react";
 import ReactDOM from 'react-dom/client'
 import Body from "./components/Body";
 import Header from "./components/Header";
@@ -10,16 +10,25 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { RestaurantMenu } from "./components/RestaurantMenu";
 import ShimmerUi from "./components/ShimmerUi";
+import Context, { userContext } from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
+// import Instamart from "./components/Instamart";
 
-const Instamart = lazy(()=> import('./components/Instamart'))
+const Instamart = lazy(() => import('./components/Instamart'))
 
 
 const AppLayout = () => {
     return (
         <React.Fragment>
-            <Header />
-            <Outlet />
-            <Footer />
+            <Provider store={store}>
+                <Context>
+                    <Header />
+                    <Outlet />
+                    <Footer />
+                </Context>
+            </Provider>
         </React.Fragment>
     )
 }
@@ -48,14 +57,21 @@ const rootLayout = createBrowserRouter([
                 path: '/restaurantmenu/:id',
                 element: <RestaurantMenu />
 
-            },
+            },{
+                path:'cart',
+                element:<Cart/>
+            }
             ,
 
             {
                 path: '/instamart',
-                element: <Suspense fallback={<ShimmerUi/>}><Instamart/></Suspense>
+                element:
+                    <Suspense fallback={<ShimmerUi />}>
+                        <Instamart />
+                    </Suspense>
             },
-         
+            
+           
         ]
 
     },

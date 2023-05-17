@@ -24,7 +24,7 @@ class About extends React.Component {
         return (
             <div className='p-5 flex-col items-center justify-center'>
                 <h1>{ }</h1>
-                <h1 class="text-3xl font-bold underline">
+                <h1 className="text-3xl font-bold underline">
                     Hello world!
                 </h1>
                 <button className='bg-red-600 rounded w-24 h-8' onClick={() => this.setState({ count: 1 })}>Add</button>

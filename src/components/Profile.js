@@ -13,7 +13,7 @@ class Profile extends React.Component {
     }
 
     async componentDidMount() {
-        const data = await fetch('https://api.github.com/users/amsadams')
+        const data = await fetch('https://api.github.com/users/nobinbabu94')
         const json = await data.json();
         console.log('child', json)
 

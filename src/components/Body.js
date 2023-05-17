@@ -20,6 +20,15 @@ const Body = () => {
         setData(e.target.value)
     }
 
+    const searchEnter = (e) => {
+        if (e.key === 'Enter') {
+            const fillData = filterAll(data, restaurantData);
+            setFilteredRestaurantData(fillData)
+            console.log(fillData, 'data')
+            
+        }
+    }
+
     useEffect(() => {
         getApi()
     }, [])
@@ -32,15 +41,7 @@ const Body = () => {
         setFilteredRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
         console.log(json.data.cards[2]?.data?.data?.cards)
     }
-    useEffect(() => {
-        const handleContextmenu = e => {
-            e.preventDefault()
-        }
-        document.addEventListener('contextmenu', handleContextmenu)
-        return function cleanup() {
-            document.removeEventListener('contextmenu', handleContextmenu)
-        }
-    }, [])
+
 
     if (!filteredRestaurantData) return null;
 
@@ -54,7 +55,10 @@ const Body = () => {
                     className=" appearance-none rounded-md border-2 "
                     type={'text'}
                     value={data}
-                    onChange={(e) => inputData(e)}
+                    onChange={(e) => {
+                        inputData(e);
+                    }}
+                    onKeyPress={searchEnter}
                 />
                 <button className="text-white rounded-md border-2 w-16 " onClick={() => {
                     const fillData = filterAll(data, restaurantData);
