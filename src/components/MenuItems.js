@@ -14,10 +14,7 @@ const MenuItems = () => {
                 <Link to='/about' className='text-white'><li >About</li></Link> 
                 <Link to='/contactus' className='text-white text-center'><li>Contact us</li></Link>
                 <Link to='/instamart' className='text-white'><li>Instamart</li></Link>
-<<<<<<< HEAD
                 <Link to='/cart' className='text-white'><h1 >Cart({cartItems.length})</h1></Link> 
-=======
->>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
             </ul>
         </>
     )

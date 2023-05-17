@@ -41,22 +41,10 @@ const Body = () => {
         setFilteredRestaurantData(json?.data?.cards[2]?.data?.data?.cards)
         console.log(json.data.cards[2]?.data?.data?.cards)
     }
-    useEffect(() => {
-        const handleContextmenu = e => {
-            e.preventDefault()
-        }
-        document.addEventListener('contextmenu', handleContextmenu)
-        return function cleanup() {
-            document.removeEventListener('contextmenu', handleContextmenu)
-        }
-    }, [])
 
 
-<<<<<<< HEAD
     if (!filteredRestaurantData) return null;
 
-=======
->>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
 
     return (
 

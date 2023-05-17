@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useContext } from 'react'
 import Profile from './Profile'
 import useAbc from '../utils/useAbc.js'
@@ -33,26 +32,6 @@ const Contact = () => {
 
           
         </div >
-=======
-import {useState} from 'react'
-import Profile from './Profile'
-import useAbc from '../utils/useAbc.js'
-
-const Contact = () => {
-
-    const [count,setCount] = useState(0) 
-    const [abc,setAbc] = useAbc()
-
-    console.log('render')
-
-    return (
-        <>
-            <h1>{abc}</h1>
-            
-            <button onClick={()=>setAbc('hello')}>+</button>
-       
-        </>
->>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
     )
 }
 
