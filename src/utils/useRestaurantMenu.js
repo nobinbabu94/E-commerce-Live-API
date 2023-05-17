@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -29,6 +32,7 @@ const useRestaurant = () => {
 
   return { restaurantData, isLoading }
 
+<<<<<<< HEAD
 =======
 const useRestaurant = () =>{
 
@@ -39,6 +43,8 @@ uuuudfgdfggfdfg sdfgdfgdfgdf
         </>
     )
 >>>>>>> f2bdb1a (updates)
+=======
+>>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
 }
 
 export default useRestaurant;

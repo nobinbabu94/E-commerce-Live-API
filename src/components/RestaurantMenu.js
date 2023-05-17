@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CardImage_CDN } from "../constants";
 import ShimmerUi from './ShimmerUi'
 import useRestaurant from "../utils/useRestaurantMenu";
+<<<<<<< HEAD
 import { ADD_ITEM } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
@@ -9,10 +10,17 @@ export const RestaurantMenu = () => {
 
   const { restaurantData, isLoading } = useRestaurant()
   const dispatch = useDispatch();
+=======
+
+export const RestaurantMenu = () => {
+
+  const {restaurantData, isLoading} = useRestaurant()
+>>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
 
 
   const imageId = restaurantData[0]?.card?.card?.info?.cloudinaryImageId
   const imageUrl = imageId && CardImage_CDN + imageId
+<<<<<<< HEAD
   const menuItems = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards ?
     restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards :
     restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[1].card.card.itemCards
@@ -58,6 +66,36 @@ export const RestaurantMenu = () => {
 
     </div>
 
+=======
+  const menuItems = restaurantData[2]?.groupedCard?.cardGroupMap.REGULAR.cards[2].card.card.itemCards
+  const restaurantName = restaurantData[0]?.card?.card?.info?.name
+
+  return (
+
+
+    <div className="restaurantMenu">
+      {!isLoading ? <ShimmerUi /> : (
+        <>
+          <img src={CardImage_CDN + restaurantData[0]?.card?.card?.info?.cloudinaryImageId} alt={'restaurantMenu'} className="restaurant-image" />
+          <h1 className="restaurantName">{restaurantName}</h1>
+          <h3 >Menu Items</h3>
+          <ul>
+            {
+              menuItems?.map((menuItem, index) => {
+                return (
+                  <li key={index} className="menu-list">{menuItem?.card?.info?.name} -
+                    Rs.{menuItem?.card?.info?.price
+                    }</li>
+                )
+              })
+            }
+          </ul>
+        </>
+      )}
+
+    </div>
+
+>>>>>>> 04b0252172f2eace16a8cecea2fe0d797bebef0a
 
   );
 };
